@@ -1,22 +1,17 @@
 import random
 
-def bogo_sort(numbers):
-    len_numbers = len(numbers) - 1
-    count = 0
-    i = 0
-    while i < len_numbers:
-        count += 1
-        if numbers[i] > numbers[i+1]:
-            random.shuffle(numbers)
-            i = 0
+def prime_number_v1(number):
+    prime = []
+    for i in range(2, number):
+        for j in range(2, i):
+            if i % j == 0:
+                break
         else:
-            i += 1
-    print(f'count = {count}')
-    return numbers
+            prime.append(i)
+    return prime
 
-s = bogo_sort
 
-nums = [random.randint(0, 1000) for i in range(5)]
-print(s(nums))
-print(bogo_sort(nums))
 
+if __name__ == '__main__':
+    print(prime_number_v1(100))
+    
