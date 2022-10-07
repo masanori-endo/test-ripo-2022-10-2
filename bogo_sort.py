@@ -1,17 +1,16 @@
 import random
 
-def prime_number_v1(number):
-    prime = []
-    for i in range(2, number):
-        for j in range(2, i):
-            if i % j == 0:
-                break
+def bubble_sort(number):
+    len_numbers = len(number) - 1
+    i = 0
+    while i < len_numbers:
+        if number[i] > number[i+1]:
+            random.shuffle(number)
+            i = 0
         else:
-            prime.append(i)
-    return prime
+            i += 1
+    return number
 
 
-
-if __name__ == '__main__':
-    print(prime_number_v1(100))
-    
+num = [random.randint(0, 100) for _ in range(5)]
+print(bubble_sort(num))
